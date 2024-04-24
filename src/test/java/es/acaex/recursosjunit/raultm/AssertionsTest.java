@@ -3,6 +3,8 @@ package es.acaex.recursosjunit.raultm;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -37,6 +39,16 @@ class AssertionsTest {
     @Test 
     void checkAssertFalse(){
         assertFalse(false);
+    }
+
+    @Test
+    void checkAssertNull(){
+        assertNull(null);
+    }
+
+    @Test
+    void checkAssertNotNull(){
+        assertNotNull(mathUtils);
     }
 
 }
