@@ -8,6 +8,7 @@ import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
+import org.junit.jupiter.params.provider.CsvFileSource;
 import org.junit.jupiter.params.provider.MethodSource;
 import org.junit.jupiter.params.provider.ValueSource;
 
@@ -40,6 +41,15 @@ public class ParametrizadosTest {
             Arguments.of(5, 7, 12),
             Arguments.of(-3, 8, 5)
         );
+    }
+
+    @ParameterizedTest
+    @CsvFileSource(resources = "/datos-descuento.csv", numLinesToSkip = 1)
+    void testCalcularDescuento(double precioOriginal, int porcentajeDescuento, double precioEsperado) {
+        
+        double precioCalculado = mathUtils.calcularDescuento(precioOriginal, porcentajeDescuento);
+        
+        assertEquals(precioEsperado, precioCalculado, 0.001); // Se usa un margen de error de 0.001
     }
 
 }

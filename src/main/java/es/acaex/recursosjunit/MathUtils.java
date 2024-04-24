@@ -21,5 +21,10 @@ public class MathUtils {
         }
         return true;
     }
+
+    public double calcularDescuento(double precioOriginal, int porcentajeDescuento) {
+        // 100 y un descuento del 10% => 100*0.90 = 90. 1-(10/100)
+        return precioOriginal * (1 - (porcentajeDescuento/100));
+    }
     
 }
