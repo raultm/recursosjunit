@@ -45,7 +45,7 @@ public class ParametrizadosTest {
 
     @ParameterizedTest
     @CsvFileSource(resources = "/datos-descuento.csv", numLinesToSkip = 1)
-    void testCalcularDescuento(double precioOriginal, int porcentajeDescuento, double precioEsperado) {
+    void testCalcularDescuento(double precioOriginal, double porcentajeDescuento, double precioEsperado) {
         
         double precioCalculado = mathUtils.calcularDescuento(precioOriginal, porcentajeDescuento);
         
