@@ -1,6 +1,7 @@
 package es.acaex.recursosjunit.raultm;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.stream.Stream;
@@ -27,6 +28,12 @@ public class ParametrizadosTest {
     @ValueSource(ints = { 2, 7, 29, 67, 89 })
     void checkValueSource(int numberToCheck){
         assertTrue(mathUtils.isPrime(numberToCheck));
+    }
+
+    @ParameterizedTest
+    @ValueSource(ints = { 1, 4 })
+    void checkValueSourceNotPrime(int numberToCheck){
+        assertFalse(mathUtils.isPrime(numberToCheck));
     }
 
     @ParameterizedTest

@@ -29,6 +29,7 @@ public class Hamcrest {
     @Test
     void checkIsNotEqualTo(){
         assertThat(mathUtils.suma(2,3), not(is(equalTo(4))));
+        assertThat(mathUtils.suma(2,3), is(not(equalTo(4))));
     }
     
     @Test
