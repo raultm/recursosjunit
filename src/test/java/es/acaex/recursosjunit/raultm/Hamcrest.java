@@ -27,8 +27,18 @@ public class Hamcrest {
     }
     
     @Test
+    void checkIsNotEqualTo(){
+        assertThat(mathUtils.suma(2,3), not(is(equalTo(4))));
+    }
+    
+    @Test
     void startsWithExample(){
         assertThat("cadena", startsWith("cad"));
+    }
+
+    @Test
+    void notStartsWithExample(){
+        assertThat("cadena", not(startsWith("dac")));
     }
 
     @Test
