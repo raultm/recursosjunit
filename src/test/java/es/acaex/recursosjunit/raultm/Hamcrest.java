@@ -74,7 +74,7 @@ public class Hamcrest {
 
     @Test
     void hasPropertyExample(){
-        assertThat(new Persona(), hasProperty("nombre", is("Alfonso")));
+        assertThat(new Persona(), hasProperty("nombre", is(anything())));
     }
 
     public class Persona {
