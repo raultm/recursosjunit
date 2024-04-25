@@ -17,8 +17,13 @@ public class Hamcrest {
     }
 
     @Test
-    void checkIs(){
+    void checkIsEqualTo(){
         assertThat(mathUtils.suma(2,3), is(equalTo(5)));
+    }
+
+    @Test
+    void checkIs(){
+        assertThat(mathUtils.suma(2,3), is(5));
     }
     
     @Test
